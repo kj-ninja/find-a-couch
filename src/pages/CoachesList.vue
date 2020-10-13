@@ -1,5 +1,5 @@
 <template>
-    <section class="content coaches">
+    <section class="coaches">
         <CoachCard
             v-for="coach in coachesList"
             :key="coach.id"
@@ -9,35 +9,14 @@
 
 <script>
 import CoachCard from "@/components/coach/CoachCard";
+import {mapGetters} from 'vuex';
 
 export default {
     components: {
         CoachCard
     },
-    data() {
-        return {
-            coachesList: [
-                {
-                    id: 1,
-                    name: 'Krzysztof Jakubiak',
-                    price: 39,
-                    tags: [
-                        {
-                            name: 'Front-end',
-                            class: 'is-info is-light'
-                        },
-                        {
-                            name: 'Back-end',
-                            class: 'is-primary is-light'
-                        },
-                        {
-                            name: 'Career',
-                            class: 'is-success is-light'
-                        },
-                    ]
-                }
-            ]
-        }
+    computed: {
+        ...mapGetters('coaches', ['coachesList'])
     }
 }
 </script>
@@ -46,5 +25,6 @@ export default {
 .coaches {
     max-width: 700px;
     margin: 30px auto;
+    padding: 10px;
 }
 </style>

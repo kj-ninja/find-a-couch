@@ -7,8 +7,8 @@
                 aria-controls="contentIdForA11y3">
                 <p class="card-header-title">
                     <template v-if="!loading">
-                        {{coachName}}<br>
-                        ${{price}} / hour
+                        {{coach.name}}<br>
+                        ${{coach.price}} / hour
                     </template>
                     <b-skeleton size="is-large" :active="loading"></b-skeleton>
                 </p>
@@ -18,25 +18,24 @@
                     <template v-if="!loading">
                         <p>Technologię których nauczam:</p>
                         <b-taglist>
-                            <b-tag
-                                v-for="tag in tags"
+                            <Tag
+                                v-for="tag in coach.tags"
                                 :key="tag.name"
                                 :type="tag.class"
-                                size="is-medium">
+                                :content="tag.name">
                                 {{tag.name}}
-                            </b-tag>
-
+                            </Tag>
                         </b-taglist>
                     </template>
                     <b-skeleton size="is-large" :active="loading" :count="2"></b-skeleton>
                 </div>
             </div>
             <footer class="card-footer">
-                <router-link :to="`/coaches/${coachId}/contact`" class="card-footer-item">
+                <router-link :to="`/coaches/${coach.id}/contact`" class="card-footer-item">
                     <template v-if="!loading">Contact</template>
                     <b-skeleton size="is-large" :active="loading"></b-skeleton>
                 </router-link>
-                <router-link :to="`/coaches/${coachId}`" class="card-footer-item">
+                <router-link :to="`/coaches/${coach.id}`" class="card-footer-item">
                     <template v-if="!loading">View Details</template>
                     <b-skeleton size="is-large" :active="loading"></b-skeleton>
                 </router-link>
@@ -46,18 +45,16 @@
 </template>
 
 <script>
+import Tag from "@/components/ui/Tag";
 
 export default {
     props: ['coach'],
     components: {
+        Tag
     },
     data() {
         return {
             loading: false,
-            coachId: this.coach.id,
-            coachName: this.coach.name,
-            tags: this.coach.tags,
-            price: this.coach.price
         }
     },
     // mounted() {

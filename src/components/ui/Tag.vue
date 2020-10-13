@@ -1,9 +1,9 @@
 <template>
-    <b-tag type="is-dark">Default</b-tag>
+    <b-tag :type="type" size="is-medium">{{content}}</b-tag>
 </template>
 
 <script>
 export default {
-    props: ['type']
+    props: ['type', 'content']
 }
 </script>
