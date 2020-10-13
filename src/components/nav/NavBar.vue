@@ -1,0 +1,40 @@
+<template>
+    <b-navbar>
+        <template slot="brand">
+            <h1>
+                <b-navbar-item tag="router-link" to="/" class="logo">
+                    Code Masters
+                </b-navbar-item>
+            </h1>
+        </template>
+        <template slot="start">
+        </template>
+        <template slot="end">
+            <b-navbar-item tag="div">
+                <div class="buttons">
+                    <router-link to="/signup" class="button is-primary">
+                        <strong>Sign up</strong>
+                    </router-link>
+                    <router-link to="/login" class="button is-light">
+                        Log in
+                    </router-link>
+                </div>
+            </b-navbar-item>
+        </template>
+    </b-navbar>
+</template>
+
+<script>
+export default {
+    data() {
+        return {}
+    }
+}
+</script>
+
+<style lang="scss">
+.logo {
+    font-size: 1.5em;
+    color: #3377b5;
+}
+</style>
