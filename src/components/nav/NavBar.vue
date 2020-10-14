@@ -13,7 +13,7 @@
             <b-navbar-item tag="div">
                 <div class="buttons">
                     <router-link to="/signup" class="button is-primary">
-                        <strong>Sign up</strong>
+                        <strong>Sign up as a Coach</strong>
                     </router-link>
                     <router-link to="/login" class="button is-light">
                         Log in

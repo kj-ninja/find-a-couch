@@ -1,9 +1,19 @@
 <template>
-    <b-tag :type="type" size="is-medium">{{content}}</b-tag>
+    <b-tag :type="tagClass" size="is-medium">{{tag}}</b-tag>
 </template>
 
 <script>
 export default {
-    props: ['type', 'content']
+    props: ['tag', 'index'],
+    data() {
+        return {
+            tagsClasses: ['is-info is-light', 'is-success is-light', 'is-primary is-light', 'is-warning is-light']
+        }
+    },
+    computed: {
+        tagClass() {
+            return this.tagsClasses[this.index];
+        }
+    }
 }
 </script>

@@ -1,9 +1,12 @@
 <template>
     <section class="coaches">
-        <CoachCard
-            v-for="coach in coachesList"
-            :key="coach.id"
-            :coach="coach"/>
+        <template v-if="hasCoaches">
+            <CoachCard
+                v-for="coach in coachesList"
+                :key="coach.id"
+                :coach="coach"/>
+        </template>
+        <h3 v-else>There is no coaches yet.</h3>
     </section>
 </template>
 
@@ -16,7 +19,7 @@ export default {
         CoachCard
     },
     computed: {
-        ...mapGetters('coaches', ['coachesList'])
+        ...mapGetters('coaches', ['coachesList', 'hasCoaches'])
     }
 }
 </script>
