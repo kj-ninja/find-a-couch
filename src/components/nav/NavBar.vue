@@ -1,13 +1,11 @@
 <template>
-    <b-navbar>
+    <b-navbar :close-on-click="false">
         <template slot="brand">
             <h1>
                 <b-navbar-item tag="router-link" to="/" class="logo">
                     Code Masters
                 </b-navbar-item>
             </h1>
-        </template>
-        <template slot="start">
         </template>
         <template slot="end">
             <b-navbar-item tag="div">
@@ -25,11 +23,7 @@
 </template>
 
 <script>
-export default {
-    data() {
-        return {}
-    }
-}
+export default {}
 </script>
 
 <style lang="scss">

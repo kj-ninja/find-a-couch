@@ -12,7 +12,7 @@ export default {
                     name: 'Krzysztof Jakubiak',
                     link: 'https://krzysztof-jakubiak.pl'
                 },
-                areas: ['Front-end', 'Back-end', 'Career'],
+                areas: ['frontend', 'career'],
             },
             {
                 id: 2,
@@ -24,7 +24,7 @@ export default {
                     name: 'Krzysztof Jakubiak',
                     link: 'https://krzysztof-jakubiak.pl'
                 },
-                areas: ['Front-end', 'Back-end', 'Team Managements'],
+                areas: ['frontend', 'backend', 'management'],
             },
             {
                 id: 3,
@@ -36,12 +36,12 @@ export default {
                     name: 'Krzysztof Jakubiak',
                     link: 'https://krzysztof-jakubiak.pl'
                 },
-                areas: ['Front-end', 'Fullstack'],
+                areas: ['frontend', 'fullstack'],
             },
             {
                 id: 4,
                 name: 'Maximilian Schwarzmuller',
-                areas: ['Front-end', 'Back-end', 'Career'],
+                areas: ['frontend', 'backend', 'career'],
                 message:
                     "I'm Maximilian and I've worked as a freelance web developer for years. Let me help you become a developer as well!",
                 price: 30,
@@ -53,7 +53,7 @@ export default {
             {
                 id: 5,
                 name: 'Julie Jones',
-                areas: ['Front-end', 'Career'],
+                areas: ['frontend', 'career'],
                 message:
                     'I am Julie and as a senior developer in a big tech company, I can help you get your first job or progress in your current role.',
                 price: 30,
