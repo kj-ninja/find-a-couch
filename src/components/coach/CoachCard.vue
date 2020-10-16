@@ -72,7 +72,7 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     text-align: left;
 }
 </style>

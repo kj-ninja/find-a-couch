@@ -13,6 +13,8 @@
                     {{ description }}
                     <br>
                 </div>
+                <div class="block">
+                    <p style="margin-bottom: 15px"><strong>Technologies: </strong></p>
                 <b-taglist>
                     <Tag
                         v-for="(area, index) in areas"
@@ -21,8 +23,11 @@
                         :tag="area">
                     </Tag>
                 </b-taglist>
-                <!--            <p style="margin-bottom: 5px"><strong>Portfolio: </strong></p>-->
-                <!--            <a :href="portfolioLink">{{ portfolioName }}</a>-->
+                </div>
+                <div class="block" v-if="hasPortfolio">
+                    <p style="margin-bottom: 5px"><strong>Portfolio: </strong></p>
+                    <a :href="portfolioLink">{{ portfolioName }}</a>
+                </div>
             </div>
             <footer class="card-footer">
                 <router-link :to="`/coaches/${coachId}/contact`" class="card-footer-item">Contact</router-link>
@@ -46,12 +51,12 @@ export default {
     },
     computed: {
         ...mapGetters('coaches', ['coachesList', 'getCoachById']),
-        // portfolioName() {
-        //     return this.coach.portfolio.name;
-        // },
-        // portfolioLink() {
-        //     return this.coach.portfolio.link;
-        // },
+        portfolioName() {
+            return this.coach.portfolio.name;
+        },
+        portfolioLink() {
+            return this.coach.portfolio.link;
+        },
         fullName() {
             return this.coach.name;
         },
@@ -66,6 +71,9 @@ export default {
         },
         areas() {
             return this.coach.areas;
+        },
+        hasPortfolio() {
+            return this.coach.portfolio.link !== '';
         }
     },
     created() {

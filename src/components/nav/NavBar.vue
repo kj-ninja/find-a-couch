@@ -3,7 +3,7 @@
         <template slot="brand">
             <h1>
                 <b-navbar-item tag="router-link" to="/" class="logo">
-                    Code Masters
+                    Skills Masters
                 </b-navbar-item>
             </h1>
         </template>
