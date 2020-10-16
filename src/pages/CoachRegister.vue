@@ -24,7 +24,6 @@ export default {
 
 <style lang="scss">
 .register {
-    max-width: 700px;
-    margin: 30px auto;
+    padding: 10px;
 }
 </style>

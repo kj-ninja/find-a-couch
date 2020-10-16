@@ -16,6 +16,9 @@
                     <router-link to="/login" class="button is-light">
                         Log in
                     </router-link>
+                    <router-link to="/requests" class="button is-light">
+                        Requests
+                    </router-link>
                 </div>
             </b-navbar-item>
         </template>

@@ -1,35 +1,37 @@
 <template>
-    <form novalidate @submit.prevent="handleSubmit">
+    <form novalidate @submit.prevent="handleSubmit" class="card">
         <b-field label="Full Name">
             <b-input v-model.trim="name" required></b-input>
         </b-field>
 
         <div class="block">
             <b-field label="Areas">
-                <b-checkbox v-model="areas"
-                            native-value="frontend">
-                    Frontend
-                </b-checkbox>
-                <b-checkbox v-model="areas"
-                            native-value="backend">
-                    Backend
-                </b-checkbox>
-                <b-checkbox v-model="areas"
-                            native-value="fullstack">
-                    Fullstack
-                </b-checkbox>
-                <b-checkbox v-model="areas"
-                            native-value="designer">
-                    Designer
-                </b-checkbox>
-                <b-checkbox v-model="areas"
-                            native-value="career">
-                    Career
-                </b-checkbox>
-                <b-checkbox v-model="areas"
-                            native-value="management">
-                    Management
-                </b-checkbox>
+                <div class="areas">
+                    <b-checkbox v-model="areas"
+                                native-value="frontend">
+                        Frontend
+                    </b-checkbox>
+                    <b-checkbox v-model="areas"
+                                native-value="backend">
+                        Backend
+                    </b-checkbox>
+                    <b-checkbox v-model="areas"
+                                native-value="fullstack">
+                        Fullstack
+                    </b-checkbox>
+                    <b-checkbox v-model="areas"
+                                native-value="designer">
+                        Designer
+                    </b-checkbox>
+                    <b-checkbox v-model="areas"
+                                native-value="career">
+                        Career
+                    </b-checkbox>
+                    <b-checkbox v-model="areas"
+                                native-value="management">
+                        Management
+                    </b-checkbox>
+                </div>
             </b-field>
         </div>
 
@@ -99,21 +101,34 @@ export default {
                 price: this.price,
                 description: this.description
             };
-            console.log(formData);
-
             this.$emit('registerCoach', formData);
         }
     }
 }
 </script>
 
-<style scoped>
-.b-checkbox.checkbox {
-    margin-right: 20px;
+<style lang="scss" scoped>
+form {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 30px;
+
+    .areas {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin-bottom: 15px;
+        }
+    }
 }
 
-.error-message {
-    color: #f14668;
-    font-size: 14px;
+
+@media screen and (min-width: 715px) {
+    form {
+        .areas {
+            flex-direction: row;
+        }
+    }
 }
 </style>

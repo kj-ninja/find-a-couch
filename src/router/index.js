@@ -3,16 +3,17 @@ import VueRouter from 'vue-router';
 import CoachesList from "@/pages/CoachesList";
 import CoachDetails from "@/components/coach/CoachDetails";
 import CoachRegister from "@/pages/CoachRegister";
+import CoachContact from "@/pages/CoachContact";
 
 Vue.use(VueRouter);
 
 const routes = [
     {path: '/', redirect: '/coaches'},
     {path: '/coaches', component: CoachesList},
-    {path: '/coaches/:coachId', component: CoachDetails, children: [
-            {path: '/contact', component: null}
-    ]},
+    {path: '/coaches/:coachId', component: CoachDetails},
+    {path: '/coaches/:coachId/contact', component: CoachContact},
     {path: '/register', component: CoachRegister},
+    {path: '/requests', component: null},
     {path: '/:notFound(.*)', component: null}
 
 

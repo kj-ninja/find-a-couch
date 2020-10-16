@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper columns">
+    <div class="content columns">
         <Filtering @changeFilter="handleFiltering"/>
         <section class="coaches">
             <template v-if="hasCoaches">
@@ -66,7 +66,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
+.content {
     margin: 30px auto;
     padding: 10px;
     display: flex;
