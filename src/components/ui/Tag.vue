@@ -1,5 +1,5 @@
 <template>
-    <b-tag :type="tagClass" size="is-medium">{{tag}}</b-tag>
+    <b-tag :type="tagClass" size="is-medium">{{tagName}}</b-tag>
 </template>
 
 <script>
@@ -13,6 +13,10 @@ export default {
     computed: {
         tagClass() {
             return this.tagsClasses[this.index];
+        },
+        tagName() {
+            const string = this.tag;
+            return string[0].toUpperCase() + string.slice(1);
         }
     }
 }

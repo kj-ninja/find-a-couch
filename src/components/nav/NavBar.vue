@@ -10,8 +10,8 @@
         <template slot="end">
             <b-navbar-item tag="div">
                 <div class="buttons">
-                    <router-link to="/signup" class="button is-primary">
-                        <strong>Sign up as a Coach</strong>
+                    <router-link to="/register" class="button is-primary">
+                        <strong>Register as a Coach</strong>
                     </router-link>
                     <router-link to="/login" class="button is-light">
                         Log in

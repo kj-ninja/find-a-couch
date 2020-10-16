@@ -25,8 +25,8 @@
                     :tag="area">
                 </Tag>
             </b-taglist>
-            <p style="margin-bottom: 5px"><strong>Portfolio: </strong></p>
-            <a :href="portfolioLink">{{ portfolioName }}</a>
+<!--            <p style="margin-bottom: 5px"><strong>Portfolio: </strong></p>-->
+<!--            <a :href="portfolioLink">{{ portfolioName }}</a>-->
         </div>
         <footer class="card-footer">
             <router-link :to="`/coaches/${coachId}/contact`" href="#" class="card-footer-item">Contact</router-link>
@@ -49,12 +49,12 @@ export default {
     },
    computed: {
        ...mapGetters('coaches', ['coachesList', 'getCoachById']),
-       portfolioName() {
-           return this.coach.portfolio.name;
-       },
-       portfolioLink() {
-           return this.coach.portfolio.link;
-       },
+       // portfolioName() {
+       //     return this.coach.portfolio.name;
+       // },
+       // portfolioLink() {
+       //     return this.coach.portfolio.link;
+       // },
        fullName() {
            return this.coach.name;
        },
@@ -62,7 +62,7 @@ export default {
            return this.coach.price;
        },
        description() {
-           return this.coach.message;
+           return this.coach.description;
        },
        coachId() {
            return this.coach.id;

@@ -6,8 +6,7 @@ export default {
                 id: 1,
                 name: 'Krzysztof Jakubiak',
                 price: 49,
-                email: 'jakubiak.krzy@gmail.com',
-                message: 'Solve real-world HTML, CSS and JavaScript challenges whilst working to professional designs. Join 65,770 developers building projects, reviewing code, and helping each other get better.',
+                description: 'Solve real-world HTML, CSS and JavaScript challenges whilst working to professional designs. Join 65,770 developers building projects, reviewing code, and helping each other get better.',
                 portfolio: {
                     name: 'Krzysztof Jakubiak',
                     link: 'https://krzysztof-jakubiak.pl'
@@ -18,8 +17,7 @@ export default {
                 id: 2,
                 name: 'Rafał Jakubiak',
                 price: 79,
-                email: 'qbik85@gmail.com',
-                message: 'Solve real-world HTML, CSS and JavaScript challenges whilst working to professional designs. Join 65,770 developers building projects, reviewing code, and helping each other get better.',
+                description: 'Solve real-world HTML, CSS and JavaScript challenges whilst working to professional designs. Join 65,770 developers building projects, reviewing code, and helping each other get better.',
                 portfolio: {
                     name: 'Krzysztof Jakubiak',
                     link: 'https://krzysztof-jakubiak.pl'
@@ -30,8 +28,7 @@ export default {
                 id: 3,
                 name: 'Sylwia Jakubiak',
                 price: 49,
-                email: 'sylwia@gmail.com',
-                message: 'Solve real-world HTML, CSS and JavaScript challenges whilst working to professional designs. Join 65,770 developers building projects, reviewing code, and helping each other get better.',
+                description: 'Solve real-world HTML, CSS and JavaScript challenges whilst working to professional designs. Join 65,770 developers building projects, reviewing code, and helping each other get better.',
                 portfolio: {
                     name: 'Krzysztof Jakubiak',
                     link: 'https://krzysztof-jakubiak.pl'
@@ -42,7 +39,7 @@ export default {
                 id: 4,
                 name: 'Maximilian Schwarzmuller',
                 areas: ['frontend', 'backend', 'career'],
-                message:
+                description:
                     "I'm Maximilian and I've worked as a freelance web developer for years. Let me help you become a developer as well!",
                 price: 30,
                 portfolio: {
@@ -53,8 +50,8 @@ export default {
             {
                 id: 5,
                 name: 'Julie Jones',
-                areas: ['frontend', 'career'],
-                message:
+                areas: ['backend', 'career'],
+                description:
                     'I am Julie and as a senior developer in a big tech company, I can help you get your first job or progress in your current role.',
                 price: 30,
                 portfolio: {
@@ -73,6 +70,16 @@ export default {
         },
         hasCoaches(state) {
             return state.coaches && state.coaches.length > 0
+        }
+    },
+    mutations: {
+        addCoach(state, payload) {
+            state.coaches.push(payload);
+        }
+    },
+    actions: {
+        addCoach({commit}, payload) {
+            commit('addCoach', payload);
         }
     }
 };
