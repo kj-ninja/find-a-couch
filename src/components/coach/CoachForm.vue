@@ -21,7 +21,7 @@
                     </b-checkbox>
                     <b-checkbox v-model="areas"
                                 native-value="designer">
-                        Designer
+                        Web Designer
                     </b-checkbox>
                     <b-checkbox v-model="areas"
                                 native-value="career">
@@ -50,16 +50,22 @@
         <!--            </b-input>-->
         <!--        </b-field>-->
 
-        <b-field label="Description">
+        <b-field label="Description" class="description">
             <b-input minlength="10"
-                     maxlength="100"
+                     maxlength="300"
                      required
                      v-model.trim="description"
                      type="textarea"></b-input>
         </b-field>
+
+        <b-field label="Portfolio" class="portfolio">
+            <b-input v-model.trim="link" placeholder="Optional"></b-input>
+        </b-field>
+
         <b-field v-if="!formIsValid">
             <p class="help is-danger">Please fill the entire form.</p>
         </b-field>
+
         <b-field>
             <button class="button is-primary">Submit</button>
         </b-field>
@@ -75,6 +81,7 @@ export default {
             areas: [],
             price: null,
             description: '',
+            link: '',
             formIsValid: true
         }
     },
@@ -94,12 +101,17 @@ export default {
             }
 
             this.formIsValid = true;
+            const portfolio = {
+                name: this.name,
+                link: this.link
+            };
             const formData = {
                 id: 10,
                 name: this.name,
                 areas: this.areas,
                 price: this.price,
-                description: this.description
+                description: this.description,
+                portfolio: portfolio
             };
             this.$emit('registerCoach', formData);
         }
@@ -120,6 +132,18 @@ form {
         label {
             margin-bottom: 15px;
         }
+    }
+
+    .description {
+        margin-bottom: 10px;
+    }
+
+    .portfolio {
+        margin-bottom: 30px;
+    }
+
+    button {
+        //margin-top: 15px;
     }
 }
 
