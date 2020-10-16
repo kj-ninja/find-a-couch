@@ -74,7 +74,7 @@ export default {
     align-items: center;
 
     .coaches {
-        max-width: 700px;
+        max-width: 800px;
         width: 100%;
     }
 }

@@ -109,7 +109,7 @@ export default {
 
 <style lang="scss" scoped>
 form {
-    max-width: 700px;
+    max-width: 800px;
     margin: 30px auto;
     padding: 30px;
 
@@ -124,10 +124,14 @@ form {
 }
 
 
-@media screen and (min-width: 715px) {
+@media screen and (min-width: 770px) {
     form {
         .areas {
             flex-direction: row;
+
+            .b-checkbox.checkbox {
+                margin-right: 20px;
+            }
         }
     }
 }

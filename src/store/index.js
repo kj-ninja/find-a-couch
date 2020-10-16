@@ -11,6 +11,12 @@ export default new Vuex.Store({
     requests: requestsModule
   },
   state: {
+    userId: 1
+  },
+  getters: {
+    userId(state) {
+      return state.userId;
+    }
   },
   mutations: {
   },

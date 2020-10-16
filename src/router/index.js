@@ -1,9 +1,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import CoachesList from "@/pages/CoachesList";
+import CoachesList from "@/pages/coaches/CoachesList";
 import CoachDetails from "@/components/coach/CoachDetails";
-import CoachRegister from "@/pages/CoachRegister";
-import CoachContact from "@/pages/CoachContact";
+import CoachRegister from "@/pages/coaches/CoachRegister";
+import CoachContact from "@/pages/coaches/CoachContact";
+import CoachRequests from "@/pages/coaches/CoachRequests";
 
 Vue.use(VueRouter);
 
@@ -13,7 +14,7 @@ const routes = [
     {path: '/coaches/:coachId', component: CoachDetails},
     {path: '/coaches/:coachId/contact', component: CoachContact},
     {path: '/register', component: CoachRegister},
-    {path: '/requests', component: null},
+    {path: '/requests', component: CoachRequests},
     {path: '/:notFound(.*)', component: null}
 
 

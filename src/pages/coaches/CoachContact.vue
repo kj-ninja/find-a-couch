@@ -65,7 +65,7 @@ export default {
     padding: 10px;
 
     form {
-        max-width: 700px;
+        max-width: 800px;
         margin: 30px auto;
         padding: 30px;
     }
