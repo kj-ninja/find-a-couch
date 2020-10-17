@@ -51,7 +51,7 @@ export default {
                 email: this.email,
                 message: this.message,
                 coachId: this.$route.params.coachId,
-                requestId: new Date().toISOString()
+                id: new Date().toISOString()
             };
             this.addRequest(formData);
             this.$router.replace('/coaches');

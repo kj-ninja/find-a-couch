@@ -11,7 +11,7 @@ export default new Vuex.Store({
     requests: requestsModule
   },
   state: {
-    userId: 1
+    userId: 10
   },
   getters: {
     userId(state) {
@@ -19,6 +19,9 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    setUserId(state, payload) {
+      state.userId = payload;
+    }
   },
   actions: {
   },

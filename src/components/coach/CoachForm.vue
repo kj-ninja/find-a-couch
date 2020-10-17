@@ -106,7 +106,6 @@ export default {
                 link: this.link
             };
             const formData = {
-                id: 10,
                 name: this.name,
                 areas: this.areas,
                 price: this.price,

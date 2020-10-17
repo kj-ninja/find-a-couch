@@ -15,7 +15,7 @@
         <div class="card-content">
             <div class="content">
                 <template v-if="!loading">
-                    <p>Technologię których nauczam:</p>
+                    <p>Skilled areas:</p>
                     <b-taglist>
                         <Tag
                             v-for="(area, index) in coach.areas"

@@ -2,7 +2,8 @@
     <div class="content columns">
         <Filtering @changeFilter="handleFiltering"/>
         <section class="coaches">
-            <template v-if="hasCoaches">
+            <Spinner v-if="isLoading">Loading...</Spinner>
+            <template v-else-if="hasCoaches">
                 <CoachCard
                     v-for="coach in filteredCoaches"
                     :key="coach.id"
@@ -14,17 +15,20 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex';
 import CoachCard from "@/components/coach/CoachCard";
 import Filtering from "@/components/coach/CoachFiltering";
-import {mapGetters} from 'vuex';
+import Spinner from "@/components/ui/Spinner/Spinner";
 
 export default {
     components: {
         CoachCard,
-        Filtering
+        Filtering,
+        Spinner
     },
     data() {
         return {
+            isLoading: false,
             activeFilters: {
                 frontend: true,
                 backend: true,
@@ -35,7 +39,10 @@ export default {
         }
     },
     computed: {
-        ...mapGetters('coaches', ['hasCoaches', 'coachesList']),
+        ...mapGetters('coaches', ['coachesList']),
+        hasCoaches() {
+            return !this.isLoading && this.$store.getters['coaches/hasCoaches'];
+        },
         filteredCoaches() {
             return this.coachesList.filter((coach) => {
                 if (this.activeFilters.frontend && coach.areas.includes('frontend')) {
@@ -60,7 +67,15 @@ export default {
     methods: {
         handleFiltering(updatedFilters) {
             this.activeFilters = updatedFilters;
+        },
+        async fetchCoaches() {
+            this.isLoading = true;
+            await this.$store.dispatch('coaches/fetchCoaches');
+            this.isLoading = false;
         }
+    },
+    created() {
+        this.fetchCoaches();
     }
 }
 </script>
